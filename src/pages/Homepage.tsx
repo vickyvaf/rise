@@ -1,8 +1,16 @@
-import Dock from "../components/Dock";
-import Folder from "../components/Folder";
+import { useState } from "react";
 import Header from "../components/Header";
+import Folder from "../components/Folder";
+import Dock from "../components/Dock";
+import ContactFile from "../components/ContactFile";
 
-export default function Homepage() {
+const Homepage = () => {
+  const [isShowContactFile, setIsShowContactFile] = useState<boolean>(false);
+
+  const handleShowFile = (): void => {
+    setIsShowContactFile((prev) => !prev);
+  };
+
   return (
     <main className="home-container">
       <Header />
@@ -10,8 +18,11 @@ export default function Homepage() {
         <Folder />
       </div>
       <div className="dock">
-        <Dock />
+        {isShowContactFile && <ContactFile handleShowFile={handleShowFile} />}
+        <Dock handleShowFile={handleShowFile} />
       </div>
     </main>
   );
-}
+};
+
+export default Homepage;

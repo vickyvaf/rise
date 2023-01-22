@@ -1,41 +1,42 @@
+import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+const Header: FC = () => {
+  const [day, setDay] = useState<number>(0);
+  const [month, setMonth] = useState<number>(0);
+  const [year, setYear] = useState<string>("");
+  const [hour, setHour] = useState<number>(0);
+  const [minute, setMinute] = useState<number>(0);
+  const [format, setFormat] = useState<string>("");
+  const [refreshTime, setRefreshTime] = useState<boolean>(false);
 
-  const getDay = new Date().getDay();
-  const getMonth = new Date().getMonth();
-  const getYear = new Date().getUTCFullYear().toString().slice(2, 4);
-  const getHour = new Date().getHours();
-  const getMinute = new Date().getMinutes();
+  const days: Array<string> = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months: Array<string> = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  let date = new Date();
-  let hours = date.getHours();
-  let minutes: any = date.getMinutes();
+  setInterval(() => {
+    setRefreshTime((prev) => !prev);
+  }, 5000);
 
-  // Check whether AM or PM
-  let newformat = hours >= 12 ? "PM" : "AM";
+  useEffect(() => {
+    const getDay = new Date().getDay();
+    setDay(getDay);
+    const getMonth = new Date().getMonth();
+    setMonth(getMonth);
+    const getYear = new Date().getFullYear().toString().slice(2, 4);
+    setYear(getYear);
 
-  // Find current hour in AM-PM Format
-  hours = hours % 12;
+    let getHour = new Date().getHours();
+    let newFormat = getHour >= 12 ? "PM" : "AM";
+    setFormat(newFormat);
 
-  // To display "0" as "12"
-  hours = hours ? hours : 12;
-  minutes = minutes < 10 ? "0" + minutes : minutes;
+    getHour = getHour % 12;
+    getHour = getHour ? getHour : 12;
+    setHour(getHour);
+    
+    let getMinute: any = new Date().getMinutes();
+    getMinute = getMinute < 10 ? "0" + getMinute : getMinute;
+    setMinute(getMinute);
+  }, [refreshTime]);
 
   return (
     <>
@@ -73,13 +74,13 @@ export default function Header() {
           <img src="/assets/search.svg" alt="search" id="search" />
           <img src="/assets/wifi.svg" alt="wifi" id="wifi" />
           <div className="date-left">
-            <span>{days[getDay]}</span>
-            <span>{months[getMonth]}</span>
-            <span>{getYear}</span>
+            <span>{days[day]}</span>
+            <span>{months[month]}</span>
+            <span>{year}</span>
           </div>
           <div className="date-right">
             <span>
-              {hours}:{minutes} {newformat}
+              {hour}:{minute} {format}
             </span>
           </div>
         </nav>
@@ -87,3 +88,5 @@ export default function Header() {
     </>
   );
 }
+
+export default Header
