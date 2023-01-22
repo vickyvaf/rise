@@ -1,3 +1,14 @@
-## Identification Website Layouts
+## This Repo Contains All Assignment from harisenin.com
 
-More explanation on - [Google Slide](https://docs.google.com/presentation/d/1e-8FcRGyI8hqoYZHsyes1G0KAYu21DshbkNpWo25GeM/edit?usp=sharing)
+
+#### 🔮 Tech Stack That Have Applied on Each Assignment
+
+[![TECH STACK](https://skills.thijs.gg/icons?i=html,css,tailwindcss,js,react,nodejs,express,mysql)](https://skills.thijs.gg)
+
+---
+#### 🔮 Every Assignment I Put on Other Branch 
+
+- Git on brach `dev`
+- HTML CSS on branch `html-css`
+- JavaScript on branch `javascript`
+- ReactJS on branch `reactjs`
