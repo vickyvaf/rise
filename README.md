@@ -1,3 +1,19 @@
-## Identification Website Layouts
+## This Repo Contains JavaScript Assignment from harisenin.com
 
-More explanation on - [Google Slide](https://docs.google.com/presentation/d/1e-8FcRGyI8hqoYZHsyes1G0KAYu21DshbkNpWo25GeM/edit?usp=sharing)
+#### 🔰 Summary
+- This project consume API from [DummyJSON](https://dummyjson.com/products)
+- Show all products list with inifinite scroll
+- Can show product detail without change page
+- Can search products list
+
+#### 🔮 Tech Stack
+- HTML
+- CSS
+- JavaScript
+
+#### 🛠 Implemented features
+- Infinite Scroll
+- Single Page Application
+
+#### ⚗ Dummy API
+- [DummyJSON](https://dummyjson.com/products)
