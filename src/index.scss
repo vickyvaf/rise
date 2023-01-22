@@ -1,0 +1,134 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../public/assets/background.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.header {
+  position: relative;
+  background-color: #8f8f8f;
+  mix-blend-mode: color-burn;
+  opacity: 20%;
+  height: 28px;
+}
+
+.nav-container {
+  width: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  .nav-left {
+    max-width: 395px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    .link {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 14px;
+      margin: 0 0.5rem;
+      #apple {
+        padding-top: 4px;
+      }
+    }
+  }
+  .nav-right {
+    max-width: 395px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    img {
+      text-decoration: none;
+      color: black;
+      margin: 0 0.3rem;
+      cursor: pointer;
+    }
+    .date-left {
+      margin: 0 0.3rem;
+      display: flex;
+      gap: 0.2rem;
+      span {
+        font-weight: 500;
+        font-size: 14px;
+        padding-bottom: 4px;
+        cursor: pointer;
+      }
+    }
+    .date-right {
+      margin: 0 0.3rem;
+      padding-bottom: 4px;
+      span {
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.home-container {
+  .folder-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0 14px;
+    div {
+      margin-left: auto;
+      margin-right: 1rem;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      img {
+        width: 70px;
+      }
+    }
+  }
+  .dock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .dock-container {
+      min-width: 270px;
+      height: 75px;
+      background-color: rgba($color: #ffffff, $alpha: 0.3);
+      position: absolute;
+      bottom: 0;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.5rem;
+      .dock-icon {
+        height: 60px;
+        transition: all 0.4s;
+        &:hover {
+          cursor: pointer;
+          transform: translateY(-15px);
+          opacity: 90%;
+        }
+      }
+      .dock-icon-separator {
+        height: 60px;
+      }
+    }
+  }
+}
