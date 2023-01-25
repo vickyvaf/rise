@@ -2,7 +2,7 @@
 
 #### 🔮 Tech Stack That Have Applied on Each Assignment
 
-[![TECH STACK](https://skills.thijs.gg/icons?i=html,css,tailwindcss,js,react,nodejs,express,mysql)](https://skills.thijs.gg)
+[![TECH STACK](https://skills.thijs.gg/icons?i=html,css,tailwindcss,js,ts,react,nodejs,express,mysql)](https://skills.thijs.gg)
 
 #### 🔮 Every Assignment I Put on Other Branch 
 
