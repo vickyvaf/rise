@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-const Folder: FC = () => {
+const Folder = () => {
   return (
     <div>
       <img src="/assets/folder.svg" alt="folder" />

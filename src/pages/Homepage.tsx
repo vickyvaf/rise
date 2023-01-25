@@ -3,12 +3,18 @@ import Header from "../components/Header";
 import Folder from "../components/Folder";
 import Dock from "../components/Dock";
 import ContactFile from "../components/ContactFile";
+import ProjectFile from "../components/ProjectFile";
 
 const Homepage = () => {
   const [isShowContactFile, setIsShowContactFile] = useState<boolean>(false);
+  const [isShowProjectFile, setIsShowProjectFile] = useState<boolean>(false);
 
-  const handleShowFile = (): void => {
+  const handleShowContactFile = (): void => {
     setIsShowContactFile((prev) => !prev);
+  };
+
+  const handleShowProjectFile = (): void => {
+    setIsShowProjectFile((prev) => !prev);
   };
 
   return (
@@ -18,8 +24,16 @@ const Homepage = () => {
         <Folder />
       </div>
       <div className="dock">
-        {isShowContactFile && <ContactFile handleShowFile={handleShowFile} />}
-        <Dock handleShowFile={handleShowFile} />
+        {isShowContactFile && (
+          <ContactFile handleShowFile={handleShowContactFile} />
+        )}
+        {isShowProjectFile && (
+          <ProjectFile handleShowFile={handleShowProjectFile} />
+        )}
+        <Dock
+          handleShowProjectFile={handleShowProjectFile}
+          handleShowContactFile={handleShowContactFile}
+        />
       </div>
     </main>
   );

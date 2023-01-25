@@ -1,20 +1,20 @@
-import { FC } from "react";
-
 interface ContactFileProps {
-  handleShowFile: () => void;
+  handleShowContactFile: () => void;
+  handleShowProjectFile: () => void;
 }
 
-const Dock: FC<ContactFileProps> = (props: ContactFileProps) => {
+const Dock = (props: ContactFileProps) => {
   return (
     <div className="dock-container">
       <img src="/assets/finder.svg" className="dock-icon" alt="dock-icon" />
       <img
+        onClick={props.handleShowProjectFile}
         src="/assets/github-dock.png"
         className="dock-icon"
         alt="dock-icon"
       />
       <img
-        onClick={props.handleShowFile}
+        onClick={props.handleShowContactFile}
         src="/assets/safari.svg"
         className="dock-icon"
         alt="dock-icon"

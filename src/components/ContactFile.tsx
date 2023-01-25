@@ -1,10 +1,8 @@
-import { FC } from "react";
-
-interface ContactFileProps {
+interface Props {
   handleShowFile: () => void;
 }
 
-const ContactFile: FC<ContactFileProps> = (props: ContactFileProps) => {
+const ContactFile = (props: Props) => {
   return (
     <div className="contact-file-container">
       <header>

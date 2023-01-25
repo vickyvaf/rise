@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header: FC = () => {
+const Header = () => {
   const [day, setDay] = useState<number>(0);
   const [month, setMonth] = useState<number>(0);
   const [year, setYear] = useState<string>("");
@@ -36,7 +36,7 @@ const Header: FC = () => {
     let getMinute: any = new Date().getMinutes();
     getMinute = getMinute < 10 ? "0" + getMinute : getMinute;
     setMinute(getMinute);
-  }, [refreshTime]);
+  }, []);
 
   return (
     <>
