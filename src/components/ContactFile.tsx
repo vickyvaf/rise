@@ -19,7 +19,7 @@ const ContactFile = (props: Props) => {
       <div className="card">
         <img src="/assets/profile.png" className="profile" alt="profile"/>
         <h2>Vicky Adi Firmansyah</h2>
-        <span>Frontend Engineer</span>
+        <span>Lets connect 👋</span>
         <div className="socials">
           <img src="/assets/github.svg" alt="social-icon"/>
           <img src="/assets/instagram.svg" alt="social-icon"/>

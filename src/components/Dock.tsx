@@ -1,4 +1,5 @@
 interface ContactFileProps {
+  handleShowProfileFile: () => void;
   handleShowContactFile: () => void;
   handleShowProjectFile: () => void;
 }
@@ -6,7 +7,12 @@ interface ContactFileProps {
 const Dock = (props: ContactFileProps) => {
   return (
     <div className="dock-container">
-      <img src="/assets/finder.svg" className="dock-icon" alt="dock-icon" />
+      <img
+        onClick={props.handleShowProfileFile}
+        src="/assets/finder.svg"
+        className="dock-icon"
+        alt="dock-icon"
+      />
       <img
         onClick={props.handleShowProjectFile}
         src="/assets/github-dock.png"
