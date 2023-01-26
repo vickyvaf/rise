@@ -36,7 +36,7 @@ const Header = () => {
     let getMinute: any = new Date().getMinutes();
     getMinute = getMinute < 10 ? "0" + getMinute : getMinute;
     setMinute(getMinute);
-  }, []);
+  }, [refreshTime]);
 
   return (
     <>
