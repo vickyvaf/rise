@@ -6,7 +6,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 body {
@@ -49,37 +48,44 @@ body {
       }
     }
   }
-  .nav-right {
-    max-width: 395px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    img {
-      text-decoration: none;
-      color: black;
-      margin: 0 0.3rem;
-      cursor: pointer;
+  @media screen and (max-width: 786px) {
+    .nav-right {
+      display: none;
     }
-    .date-left {
-      margin: 0 0.3rem;
+  }
+  @media screen and (min-width: 786px) {
+    .nav-right {
+      max-width: 395px;
+      z-index: 100;
       display: flex;
-      gap: 0.2rem;
-      span {
-        font-weight: 500;
-        font-size: 14px;
-        padding-bottom: 4px;
+      align-items: center;
+      img {
+        text-decoration: none;
+        color: black;
+        margin: 0 0.3rem;
         cursor: pointer;
       }
-    }
-    .date-right {
-      display: flex;
-      gap: 0.2rem;
-      span {
-        font-weight: 500;
-        font-size: 14px;
+      .date-left {
         margin: 0 0.3rem;
-        padding-bottom: 4px;
-        cursor: pointer;
+        display: flex;
+        gap: 0.2rem;
+        span {
+          font-weight: 500;
+          font-size: 14px;
+          padding-bottom: 4px;
+          cursor: pointer;
+        }
+      }
+      .date-right {
+        display: flex;
+        gap: 0.2rem;
+        span {
+          font-weight: 500;
+          font-size: 14px;
+          margin: 0 0.3rem;
+          padding-bottom: 4px;
+          cursor: pointer;
+        }
       }
     }
   }
